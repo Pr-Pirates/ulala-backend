@@ -20,8 +20,9 @@ app.get("/", (req, res) => { res.send("Ulala Server-Database connected!"); })
 //DB connection between client-server
 client.connect(err => {
     //Database
-
-
+    const Admin = client.db(`${process.env.DB_NAME}`).collection("admins");
+    const User = client.db(`${process.env.DB_NAME}`).collection("users");
+    console.log("database connected");
 
 });
 
